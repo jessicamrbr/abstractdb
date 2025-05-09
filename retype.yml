@@ -1,0 +1,21 @@
+input: docs
+output: .retype
+url: # your-website-url (opcional)
+branding:
+  title: AbstractDB
+  label: v1.0.0
+
+meta:
+  title: " | AbstractDB Documentation"
+
+links:
+  - text: GitHub
+    link: https://github.com/your-username/abstractdb
+    icon: mark-github
+    target: blank
+
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+
+editor:
+  enabled: true
