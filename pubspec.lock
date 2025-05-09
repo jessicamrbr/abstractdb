@@ -140,9 +140,11 @@ packages:
   collql:
     dependency: "direct main"
     description:
-      path: "/Users/jessica/Projects/dart_packages/collql"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: d6eb75fc4eb12cf9e36fda128ba07367280e5cee
+      url: "git@github.com:jessicamrbr/CollQL.git"
+    source: git
     version: "1.0.0"
   convert:
     dependency: transitive
@@ -296,9 +298,11 @@ packages:
   initializable:
     dependency: "direct main"
     description:
-      path: "/Users/jessica/Projects/dart_packages/initializable"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "1940a559b2d9e2dd79c40be169758b2e6de03cc0"
+      url: "git@github.com:jessicamrbr/Initializable.git"
+    source: git
     version: "1.0.0"
   io:
     dependency: transitive

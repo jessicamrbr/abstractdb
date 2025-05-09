@@ -10,9 +10,9 @@ environment:
 dependencies:
   signals: ^6.0.2
   initializable:
-    path: /Users/jessica/Projects/dart_packages/initializable
+    git: git@github.com:jessicamrbr/Initializable.git
   collql:
-    path: /Users/jessica/Projects/dart_packages/collql
+    git: git@github.com:jessicamrbr/CollQL.git
   hive: ^2.2.3
   async: ^2.13.0
   fuzzy: ^0.5.1
