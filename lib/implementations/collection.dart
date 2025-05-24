@@ -234,7 +234,7 @@ class Collection<I, E> with InitializableMixin {
   /// Insert/Replace an item into the collection and returns the result [Document].
   /// 
   /// With ID of the newly inserted item, when without one in source [Document].
-  Future<Document> save(E data, { String? sourceRequestId }) async {
+  Future<E> save(E data, { String? sourceRequestId }) async {
     final Document item = _transformIn(data);
     
     if (item.id == null) item.generateId();
@@ -269,7 +269,7 @@ class Collection<I, E> with InitializableMixin {
       addOrChangeEvent.ack.future,
     ]);
 
-    return item;
+    return _transformOut(item);
   }
 
   /// Updates multiple items in the collection that match a given [Filter] with the specified [Modifier]s.
