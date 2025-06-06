@@ -7,6 +7,7 @@ import 'package:initializable/initializable.dart';
 
 ///
 /// [I] is the type of ID of the documents in collection.
+/// [E] is the type of the item EXPOSED by collection after transformation.
 abstract class PersistenceAdapter<I, E> extends AbstractdbAdapter<I, E> with InitializableMixin {
   @override
   String get adapterId => 'Persistence${super.adapterId}';

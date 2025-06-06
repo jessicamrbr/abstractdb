@@ -3,7 +3,7 @@ import 'package:abstractdb/abstractions/collection_events.dart';
 import 'package:xid/xid.dart';
 
 /// [I] is the type of ID of the documents in collection.
-/// [E] is the type of the item EXPOSED by collection after transformation.]
+/// [E] is the type of the item EXPOSED by collection after transformation.
 abstract class AbstractdbAdapter<I, E> {
   /// A unique identifier for the adapter.
   /// 

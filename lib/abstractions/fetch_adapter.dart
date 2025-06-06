@@ -4,6 +4,7 @@ import 'package:collql/collql.dart';
 
 ///
 /// [I] is the type of ID of the documents in collection.
+/// [E] is the type of the item EXPOSED by collection after transformation.
 abstract class FetchAdapter<I, E> extends AbstractdbAdapter<I, E> {
   @override
   String get adapterId => 'Fetch${super.adapterId}';

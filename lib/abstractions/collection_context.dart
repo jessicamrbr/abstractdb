@@ -5,6 +5,8 @@ import 'package:abstractdb/implementations/cursor.dart';
 
 import '../utils/types.dart';
 
+/// [I] is the type of ID of the documents in collection.
+/// [E] is the type of the item EXPOSED by collection after transformation.
 typedef CollectionContext<I, E> = ({
   CollectionName getName,
   CollectionIdexes<I> getIndexes,

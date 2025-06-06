@@ -5,7 +5,8 @@ import 'package:initializable/initializable.dart';
 
 ///
 /// [I] is the type of ID of the documents in collection.
-abstract class SyncAdapter<I> extends AbstractdbAdapter with InitializableMixin {
+/// [E] is the type of the item EXPOSED by collection after transformation.
+abstract class SyncAdapter<I, E> extends AbstractdbAdapter<I, E> with InitializableMixin {
   final String? _adapterId;
   @override
   String get adapterId => _adapterId ?? 'Sync${super.adapterId}';
@@ -47,4 +48,6 @@ abstract class SyncAdapter<I> extends AbstractdbAdapter with InitializableMixin 
   Future<void> dispose();
 }
 
-typedef SyncAdapterFactory<I, E> = SyncAdapter<I> Function(CollectionContext<I, E>);
+/// [I] is the type of ID of the documents in collection.
+/// [E] is the type of the item EXPOSED by collection after transformation.
+typedef SyncAdapterFactory<I, E> = SyncAdapter<I, E> Function(CollectionContext<I, E>);

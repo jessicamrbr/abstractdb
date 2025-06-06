@@ -26,7 +26,8 @@ part 'supabase_pgmq_sync_adapter.g.dart';
 /// separated by a semicolon char. E.g. '123;124'.
 ///
 /// [I] is the type of ID of the documents in collection.
-class SupabaseSyncAdapter<I> extends SyncAdapter<I> {
+/// [E] is the type of the documents in collection.
+class SupabaseSyncAdapter<I, E> extends SyncAdapter<I, E> {
   final SupabaseClient client;
   final Collection localQueueLog;
 
@@ -266,9 +267,9 @@ class SupabaseSyncAdapter<I> extends SyncAdapter<I> {
     // DELETED
     if (eventDataDoc['o'] == "d") context.remove(eventDataDoc['rid'], sourceRequestId: adapterId);
     // INSERTED
-    if (eventDataDoc['o'] == "i") context.save(Document(eventDataDoc['d']), sourceRequestId: adapterId);
+    if (eventDataDoc['o'] == "i") context.save(eventDataDoc['d'], sourceRequestId: adapterId);
     // UPDATED
-    if (eventDataDoc['o'] == "u") context.save(Document(eventDataDoc['d']), sourceRequestId: adapterId);
+    if (eventDataDoc['o'] == "u") context.save(eventDataDoc['d'], sourceRequestId: adapterId);
   }
 
   @override
